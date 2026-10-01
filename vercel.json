@@ -1,0 +1,50 @@
+{
+    "buildCommand":  "npm run build",
+    "outputDirectory":  "build",
+    "rewrites":  [
+                     {
+                         "source":  "/api/(.*)",
+                         "destination":  "/api/$1"
+                     },
+                     {
+                         "source":  "/assessment",
+                         "destination":  "/assessment/index.html"
+                     },
+                     {
+                         "source":  "/wheel",
+                         "destination":  "/wheel/index.html"
+                     },
+                     {
+                         "source":  "/result",
+                         "destination":  "/result/index.html"
+                     },
+                     {
+                         "source":  "/results",
+                         "destination":  "/results/index.html"
+                     },
+                     {
+                         "source":  "/email",
+                         "destination":  "/email/index.html"
+                     },
+                     {
+                         "source":  "/progress",
+                         "destination":  "/progress/index.html"
+                     },
+                     {
+                         "source":  "/admin",
+                         "destination":  "/admin/index.html"
+                     },
+                     {
+                         "source":  "/s/(.*)",
+                         "destination":  "/s/index.html"
+                     },
+                     {
+                         "source":  "/referrer",
+                         "destination":  "/referrer/index.html"
+                     },
+                     {
+                         "source":  "/(.*)",
+                         "destination":  "/index.html"
+                     }
+                 ]
+}

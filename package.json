@@ -1,0 +1,59 @@
+{
+  "name": "professional-leverage-diagnostic",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "lucide-react": "^1.20.0",
+    "openai": "^6.42.0",
+    "pako": "^2.1.0",
+    "pg": "^8.22.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1",
+    "vercel": "^28.18.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "node init && react-app-rewired start",
+    "build": "node init && react-app-rewired build && node scripts/generate-route-metadata.js",
+    "test": "react-app-rewired test",
+    "serve": "node server.js",
+    "test:ci": "react-app-rewired test --watchAll=false",
+    "check": "npm run test:ci && npm run build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@flydotio/dockerfile": "^0.7.10",
+    "@tailwindcss/postcss": "^4.3.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "autoprefixer": "^10.5.0",
+    "buffer": "^6.0.3",
+    "nwsapi": "^2.2.24",
+    "postcss": "^8.5.15",
+    "react-app-rewired": "^2.2.1",
+    "react-scripts": "^5.0.1",
+    "tailwindcss": "^4.3.1"
+  },
+  "description": "A full-stack professional blind-spot diagnostic with personalized insights and referral tracking."
+}
