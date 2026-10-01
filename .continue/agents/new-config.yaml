@@ -1,0 +1,79 @@
+# This is an example configuration file
+# To learn more, see the full config.yaml reference: https://docs.continue.dev/reference
+
+name: My Local Setup
+version: 1.0.0
+schema: v1
+
+# Define which models can be used
+# https://docs.continue.dev/customization/models
+models:
+  - name: DeepSeek Coder
+    provider: ollama
+    model: deepseek-coder # or your exact model name from `ollama list`
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+
+  - name: qwen2.5-coder 7b
+    provider: ollama
+    model: qwen2.5-coder:7b
+    roles:
+      - apply
+      - autocomplete
+      - chat
+      - edit
+
+# Optional: Set DeepSeek as default for specific roles
+# Uncomment and adjust as needed:
+#
+# modelRoles:
+#   chat: DeepSeek Coder
+#   edit: DeepSeek Coder
+#   apply: DeepSeek Coder
+#   autocomplete: DeepSeek Coder
+
+# Context providers for better code understanding
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase
+
+# Custom slash commands
+customCommands:
+  - name: test
+    description: Write unit tests for the selected code
+    prompt: |
+      {{{ input }}}
+
+      Write a comprehensive set of unit tests for the above code. 
+      Include setup, edge cases, and teardown.
+
+  - name: explain
+    description: Explain the selected code
+    prompt: |
+      Explain this code in detail:
+      {{{ input }}}
+
+  - name: refactor
+    description: Refactor the selected code
+    prompt: |
+      Refactor this code to be cleaner and more efficient:
+      {{{ input }}}
+
+# Tab autocomplete settings
+tabAutocompleteModel:
+  title: DeepSeek Coder
+  provider: ollama
+  model: deepseek-coder
+
+# UI settings
+ui:
+  showChatScrollbar: true
+  codeBlockToolbar: true
